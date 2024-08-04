@@ -22,13 +22,15 @@ class Main {
 
         for(String subject: subjects) {
             System.out.println("Enter the marks in " + subject);
-            marks[i] = in.nextInt(100);
+            marks[i] = in.nextInt();
             grades[i] = getGrades(marks[i]);
             i++;
         }
 
         long totalMarks = Arrays.stream(marks).sum();
-        long averageMarks = totalMarks / totalSubjects;
+        double averageMarks = (double) totalMarks / totalSubjects;
+
+        System.out.println("===========================");
 
         System.out.println("Subjects \t Marks \tGrade");
         for(i = 0; i < totalSubjects; i++) {
